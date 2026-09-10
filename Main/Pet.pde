@@ -10,6 +10,7 @@ class Pet {
     this.name = name;
     this.x = x;
     this.y = y;
+    this.happiness = 100;
   }
 
 
@@ -32,5 +33,19 @@ class Pet {
     fill(0);
     circle(x-40, y-40, 20);
     circle(x+40, y-40, 20);
+  }
+
+  void update() {
+    happiness -= 0.05;
+    if (happiness < 0) {
+      happiness = 0;
+    }
+  }
+  
+  void pat() {
+    happiness += 5;
+    if (happiness > 100) {
+      happiness = 100;
+    }
   }
 }
