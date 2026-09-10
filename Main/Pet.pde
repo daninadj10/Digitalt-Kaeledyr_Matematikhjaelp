@@ -21,6 +21,10 @@ class Pet {
     dirToMouseX = 1;
     dirToMouseY = 1;
   }
+  
+  
+  void mouthMovement() {
+  }
 
 
 
@@ -33,6 +37,10 @@ class Pet {
     fill(0);
     circle(x-40, y-40, 20);
     circle(x+40, y-40, 20);
+    noFill();
+    strokeWeight(5);
+    arc(x, y+40, 20, 20, 0, PI+0.5, OPEN);
+    strokeWeight(1);
   }
 
   void update() {
