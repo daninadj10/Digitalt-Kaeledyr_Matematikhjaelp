@@ -21,9 +21,6 @@ class Pet {
     dirToMouseY = 1;
   }
 
-
-
-
   void display() {
     fill(100);
     circle(x, y, 200);
@@ -33,13 +30,18 @@ class Pet {
     fill(0);
     circle(x-40, y-40, 20);
     circle(x+40, y-40, 20);
+
+    drawMouth();
+  }
+
+  void drawMouth() {
     noFill();
     strokeWeight(5);
     if (happiness > 50) {
-      arc(x, y+40, 20, 20, PI-PI*happiness/100, PI-PI+PI*happiness/100, OPEN);
+      arc(x, y+40, 50, 20, 0.8*PI-(0.8*PI*happiness)/100, 0.2*PI+0.8*PI*happiness/100, OPEN);
     }
     if (happiness < 50) {
-      arc(x, y+60, 20, 20, PI+(happiness/50)*(PI/2), TWO_PI-(happiness/50)*(PI/2), OPEN);
+      arc(x, y+60, 50, 20, PI+(0.8*PI*happiness)/100, TWO_PI-(0.8*PI*happiness)/100, OPEN);
     }
     strokeWeight(1);
   }
