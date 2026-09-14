@@ -31,7 +31,31 @@ class Pet {
     circle(x-40, y-40, 20);
     circle(x+40, y-40, 20);
 
+    drawGlasses();
+
     drawMouth();
+  }
+
+  void drawGlasses() {
+    float glassesY = y - 39;
+    
+    // Briller
+    stroke(0);
+    strokeWeight(4);
+    noFill();
+
+    // Venstre bril
+    ellipse(x - 40, glassesY, 70, 50);
+
+    // Højre bril
+    ellipse(x + 40, glassesY, 70, 50);
+
+    // Bro
+    line(x - 5, glassesY, x + 5, glassesY);
+
+    // Stænger
+    line(x - 75, glassesY - 5, x - 90, glassesY - 15);
+    line(x + 75, glassesY - 5, x + 90, glassesY - 15);
   }
 
   void drawMouth() {
