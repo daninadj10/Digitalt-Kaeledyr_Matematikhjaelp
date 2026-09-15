@@ -14,31 +14,32 @@ class Pet {
 
 
 
-  void eyeMovement() {
-    float dirToMouseX;
-    float dirToMouseY;
-    dirToMouseX = 1;
-    dirToMouseY = 1;
+  void drawEyes() {
+    fill(255);
+    ellipse(x-40, y-40, 40, 40);
+    ellipse(x+40, y-40, 40, 40);
+    fill(0);
+    float angleToMouseLeft;
+    float angleToMouseRight;
+    angleToMouseLeft = 
+    circle(x-40, y-40, 20);
+    circle(x+40, y-40, 20);
   }
 
   void display() {
     fill(100);
     circle(x, y, 200);
-    fill(255);
-    ellipse(x-40, y-40, 50, 35);
-    ellipse(x+40, y-40, 50, 35);
-    fill(0);
-    circle(x-40, y-40, 20);
-    circle(x+40, y-40, 20);
+
 
     drawGlasses();
 
     drawMouth();
+    drawEyes();
   }
 
   void drawGlasses() {
     float glassesY = y - 39;
-    
+
     // Briller
     stroke(0);
     strokeWeight(4);
