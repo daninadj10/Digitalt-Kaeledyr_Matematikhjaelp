@@ -5,7 +5,8 @@ ArrayList<Button> buttons = new ArrayList<Button>();
 
 
 void setup() {
-  size(800, 600);
+  size(800, 600, P2D);
+  pixelDensity(displayDensity());
 
   bg = loadImage("Background.png");
   bg.resize(width, height);
@@ -20,6 +21,7 @@ void setup() {
 }
 
 void draw() {
+  image(bg, 0, 0);
   pet.update();
   pet.display();
 
