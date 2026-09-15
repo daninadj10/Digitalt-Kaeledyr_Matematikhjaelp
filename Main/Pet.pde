@@ -1,44 +1,44 @@
+
+
 class Pet {
 
   String name;
   float x;
   float y;
+  float size = 200;
   private float happiness;
+  Eye leftEye;
+  Eye rightEye;
+
+
 
   Pet(String name, float x, float y) {
     this.name = name;
     this.x = x;
     this.y = y;
     this.happiness = 100;
-  }
-
-
-
-  void eyeMovement() {
-    float dirToMouseX;
-    float dirToMouseY;
-    dirToMouseX = 1;
-    dirToMouseY = 1;
+    leftEye = new Eye(x-40, y-40, 40);
+    rightEye = new Eye(x+40, y-40, 40);
   }
 
   void display() {
-    fill(100);
-    circle(x, y, 200);
-    fill(255);
-    ellipse(x-40, y-40, 50, 35);
-    ellipse(x+40, y-40, 50, 35);
-    fill(0);
-    circle(x-40, y-40, 20);
-    circle(x+40, y-40, 20);
+    noStroke();
+    fill(#726C74, 50);
+    ellipse(x, y+size/2-10, size*0.8, size*0.3);
+    fill(#A74BC4);
+    circle(x, y, size);
+
 
     drawGlasses();
 
     drawMouth();
+    leftEye.display();
+    rightEye.display();
   }
 
   void drawGlasses() {
     float glassesY = y - 39;
-    
+
     // Briller
     stroke(0);
     strokeWeight(4);

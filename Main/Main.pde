@@ -3,6 +3,7 @@ PImage background;
 ArrayList<Activity> activities = new ArrayList<Activity>();
 ArrayList<Button> buttons = new ArrayList<Button>();
 
+
 void setup() {
   size(800, 600);
   
@@ -20,6 +21,7 @@ void draw() {
   pet.update();
   pet.display();
   println(pet.happiness);
+
 }
 
 void mousePressed() {
