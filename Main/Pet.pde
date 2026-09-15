@@ -24,7 +24,7 @@ class Pet {
   void display() {
     noStroke();
     fill(#726C74, 50);
-    ellipse(x, y+size/2-10, size*0.8, size*0.3);
+    ellipse(x, y+size/2-10, size*0.8, size*0.2);
     fill(#A74BC4);
     circle(x, y, size);
 

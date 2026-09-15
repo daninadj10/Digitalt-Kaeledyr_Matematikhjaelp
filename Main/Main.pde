@@ -18,9 +18,11 @@ void setup() {
 }
 
 void draw() {
+  image(background, 0, 0);
   pet.update();
   pet.display();
-  println(pet.happiness);
+
+  println(frameRate);
 
 }
 
