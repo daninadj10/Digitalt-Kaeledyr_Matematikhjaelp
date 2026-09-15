@@ -2,6 +2,7 @@ Pet pet;
 ArrayList<Activity> activities = new ArrayList<Activity>();
 ArrayList<Button> buttons = new ArrayList<Button>();
 
+
 void setup() {
   size(600, 400);
   activities.add(new Activity("pat", 5));
@@ -13,6 +14,7 @@ void draw() {
   pet.update();
   pet.display();
   println(pet.happiness);
+
 }
 
 void mousePressed() {

@@ -1,40 +1,39 @@
+
+
 class Pet {
 
   String name;
   float x;
   float y;
+  float size = 200;
   private float happiness;
+  Eye leftEye;
+  Eye rightEye;
+
+
 
   Pet(String name, float x, float y) {
     this.name = name;
     this.x = x;
     this.y = y;
     this.happiness = 100;
-  }
-
-
-
-  void drawEyes() {
-    fill(255);
-    ellipse(x-40, y-40, 40, 40);
-    ellipse(x+40, y-40, 40, 40);
-    fill(0);
-    float angleToMouseLeft;
-    float angleToMouseRight;
-    angleToMouseLeft = 
-    circle(x-40, y-40, 20);
-    circle(x+40, y-40, 20);
+    leftEye = new Eye(x-40, y-40, 40);
+    rightEye = new Eye(x+40, y-40, 40);
   }
 
   void display() {
-    fill(100);
-    circle(x, y, 200);
+    noStroke();
+    fill(#726C74, 50);
+    ellipse(x, y+size/2-10, size*0.8, size*0.3);
+    fill(#A74BC4);
+    circle(x, y, size);
 
 
     drawGlasses();
 
     drawMouth();
-    drawEyes();
+    leftEye.display();
+    rightEye.display();
   }
 
   void drawGlasses() {
