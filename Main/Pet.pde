@@ -81,4 +81,8 @@ class Pet {
     happiness += amount;
     happiness = constrain(happiness, 0, 100);
   }
+
+  boolean isClicked(float x, float y) {
+    return dist(mouseX, mouseY, x, y) < size/2;
+  }
 }

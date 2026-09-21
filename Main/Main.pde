@@ -29,7 +29,7 @@ void draw() {
 }
 
 void mousePressed() {
-  if (dist(mouseX, mouseY, pet.x, pet.y) < 100) {
+  if (pet.isClicked(mouseX, mouseY)) {
     buttons.get(0).click(pet);
   }
 }
