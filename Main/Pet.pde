@@ -2,10 +2,10 @@
 
 class Pet {
 
-  String name;
-  float x;
-  float y;
-  float size = 200;
+  private String name;
+  private float x;
+  private float y;
+  private float size = 200;
   private float happiness;
   Eye leftEye;
   Eye rightEye;
@@ -36,7 +36,7 @@ class Pet {
     rightEye.display();
   }
 
-  void drawGlasses() {
+  private void drawGlasses() {
     float glassesY = y - 39;
 
     // Briller
@@ -58,7 +58,7 @@ class Pet {
     line(x + 75, glassesY - 5, x + 90, glassesY - 15);
   }
 
-  void drawMouth() {
+  private void drawMouth() {
     noFill();
     strokeWeight(5);
     if (happiness > 50) {

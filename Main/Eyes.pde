@@ -1,6 +1,6 @@
 class Eye {
-  float x, y;
-  int size;
+  private float x, y;
+  private int size;
 
   Eye(float x, float y, int size) {
     this.x = x;
