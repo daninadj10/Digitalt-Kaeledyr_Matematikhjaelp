@@ -17,27 +17,117 @@ class Pet {
     this.x = x;
     this.y = y;
     this.happiness = 100;
-    leftEye = new Eye(x-40, y-40, 40);
-    rightEye = new Eye(x+40, y-40, 40);
+    leftEye = new Eye(x-40, y-20, 40);
+    rightEye = new Eye(x+40, y-20, 40);
   }
 
   void display() {
-    noStroke();
-    fill(#726C74, 50);
-    ellipse(x, y+size/2-10, size*0.8, size*0.2);
-    fill(#A74BC4);
-    circle(x, y, size);
+    pushMatrix();
 
+    noStroke();
+    translate(x, y);
+
+    // Draw shadow
+    fill(#726C74, 50);
+    ellipse(0, size/2-10, size*0.8, size*0.2);
+
+    // Draw body
+    fill(#A74BC4);
+    circle(0, 0, size);
+    
+    // Draw cheeks
+    fill(#F27DE5, 150);
+    ellipse(-size/3.5, 15, 30, 15);
+    ellipse(size/3.5, 15, 30, 15);
+
+    // Shadow on bottom of ball
+    fill(#8E3FA8);
+    noStroke();
+
+    drawEdgeShadow();
+
+    // Draw shiny bubbles
+    rotate(PI/4);
+    fill(#E2BAF0);
+    ellipse(-size/2.3, 0, 12, 35);
+    rotate(PI/10);
+    ellipse(-size/2.3, 0, 8, 12);
+
+    popMatrix();
 
     drawGlasses();
-
     drawMouth();
     leftEye.display();
     rightEye.display();
   }
 
+  private void drawEdgeShadow() {
+    pushMatrix();
+    rotate(-PI/5);
+    
+    fill(#8E3FA8);
+
+    float r = size / 2;
+
+    // Hvor højt oppe spidserne skal være
+    float endY = r * 0.2;
+
+    // x-positionen for spidserne på boldens kant
+    float endX = sqrt(r*r - endY*endY);
+
+    // Den øverste bue skal være fladere
+    float topY = r * 0.9;
+
+    // Halv bredden af buen
+    float halfWidth = endX;
+
+    // Beregn radius på den store øverste bue
+    float sagitta = topY - endY;
+    float innerR = (halfWidth * halfWidth + sagitta * sagitta)
+      / (2 * sagitta);
+
+    // Centrum for den store cirkel
+    float innerCenterY = topY - innerR;
+
+
+    beginShape();
+
+    // --------------------------------
+    // 1. Den nederste bue
+    //    følger boldens kant
+    // --------------------------------
+
+    float startAngle = atan2(endY, endX);
+    float endAngle = PI - startAngle;
+
+    for (float a = startAngle; a <= endAngle; a += 0.02) {
+      float px = cos(a) * r;
+      float py = sin(a) * r;
+      vertex(px, py);
+    }
+
+
+    // --------------------------------
+    // 2. Den øverste bue
+    //    stor radius = flad kurve
+    // --------------------------------
+
+    float startInner = atan2(endY - innerCenterY, endX);
+    float endInner = PI - startInner;
+
+    for (float a = endInner; a >= startInner; a -= 0.02) {
+      float px = cos(a) * innerR;
+      float py = sin(a) * innerR + innerCenterY;
+      vertex(px, py);
+    }
+
+    endShape(CLOSE);
+    
+    popMatrix();
+  }
+
   private void drawGlasses() {
-    float glassesY = y - 39;
+    float glassesY = y - 19;
 
     // Briller
     stroke(0);
