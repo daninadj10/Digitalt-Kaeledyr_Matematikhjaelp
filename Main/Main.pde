@@ -14,7 +14,7 @@ void setup() {
   bg.resize(width, height);
   image(bg, 0, 0);
   screen = 0;
-  
+
   activities.add(new Activity("pat", 5));
   buttons.add(new Button(activities.get(0)));
   pet = new Pet("Hjælper", width/2, 320);
@@ -23,8 +23,9 @@ void setup() {
 }
 
 void draw() {
-  if(screen == 0) drawHomescreen();
-  if(screen == 1) drawMathgame();
+  if (screen == 0) drawHomescreen();
+  if (screen == 1) drawMathgame();
+
   println(frameRate);
 }
 
@@ -32,5 +33,5 @@ void mousePressed() {
   if (pet.isClicked(mouseX, mouseY)) {
     buttons.get(0).click(pet);
   }
-  screenShift(mouseX, mouseY);
+  if (screen == 0) screenShift(mouseX, mouseY);
 }
