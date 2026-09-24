@@ -1,4 +1,5 @@
 Pet pet;
+int screen;
 PImage bg;
 ArrayList<Activity> activities = new ArrayList<Activity>();
 ArrayList<Button> buttons = new ArrayList<Button>();
@@ -6,12 +7,13 @@ ArrayList<Button> buttons = new ArrayList<Button>();
 
 void setup() {
   size(800, 600, P2D);
+  surface.setLocation(displayWidth / 2 - width / 2, displayHeight / 2 - height / 2);
   pixelDensity(displayDensity());
 
   bg = loadImage("Background.png");
   bg.resize(width, height);
   image(bg, 0, 0);
-
+  screen = 0;
 
   activities.add(new Activity("pat", 5));
   buttons.add(new Button(activities.get(0)));
@@ -21,9 +23,8 @@ void setup() {
 }
 
 void draw() {
-  image(bg, 0, 0);
-  pet.update();
-  pet.display();
+  if (screen == 0) drawHomescreen();
+  if (screen == 1) drawMathgame();
 
   println(frameRate);
 }
@@ -32,4 +33,5 @@ void mousePressed() {
   if (pet.isClicked(mouseX, mouseY)) {
     buttons.get(0).click(pet);
   }
+  if (screen == 0) screenShift(mouseX, mouseY);
 }
