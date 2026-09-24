@@ -9,9 +9,8 @@ void setup() {
   size(800, 600, P2D);
   surface.setLocation(displayWidth / 2 - width / 2, displayHeight / 2 - height / 2);
   pixelDensity(2);
-
+  
   bg = loadImage("Background.png");
-  bg.resize(width, height);
   image(bg, 0, 0);
   screen = 0;
 
@@ -26,7 +25,6 @@ void draw() {
   if (screen == 0) drawHomescreen();
   if (screen == 1) drawMathgame();
 
-  println(frameRate);
 }
 
 void mousePressed() {
