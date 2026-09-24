@@ -8,7 +8,7 @@ ArrayList<Button> buttons = new ArrayList<Button>();
 void setup() {
   size(800, 600, P2D);
   surface.setLocation(displayWidth / 2 - width / 2, displayHeight / 2 - height / 2);
-  pixelDensity(displayDensity());
+  pixelDensity(2);
 
   bg = loadImage("Background.png");
   bg.resize(width, height);
