@@ -3,6 +3,7 @@ int screen;
 PImage bg;
 ArrayList<Activity> activities = new ArrayList<Activity>();
 ArrayList<Button> buttons = new ArrayList<Button>();
+ArrayList<Particle> particles = new ArrayList<Particle>();
 
 
 void setup() {
