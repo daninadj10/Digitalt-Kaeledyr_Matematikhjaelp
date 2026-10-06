@@ -173,6 +173,6 @@ class Pet {
   }
 
   boolean isClicked(float x, float y) {
-    return dist(mouseX, mouseY, x, y) < size/2;
+    return dist(this.x, this.y, x, y) < size/2;
   }
 }
