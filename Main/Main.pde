@@ -20,6 +20,8 @@ void setup() {
   pet = new Pet("Hjælper", width/2, 320);
 
   println(bg.width + " x " + bg.height);
+  
+  runTests();
 }
 
 void draw() {

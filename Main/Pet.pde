@@ -171,6 +171,10 @@ class Pet {
     happiness += amount;
     happiness = constrain(happiness, 0, 100);
   }
+  
+  float getHappiness() {
+    return happiness;
+  }
 
   boolean isClicked(float x, float y) {
     return dist(this.x, this.y, x, y) < size/2;
