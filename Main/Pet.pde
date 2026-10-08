@@ -34,7 +34,7 @@ class Pet {
     // Draw body
     fill(#A74BC4);
     circle(0, 0, size);
-    
+
     // Draw cheeks
     fill(#F27DE5, 150);
     ellipse(-size/3.5, 15, 30, 15);
@@ -64,7 +64,7 @@ class Pet {
   private void drawEdgeShadow() {
     pushMatrix();
     rotate(-PI/5);
-    
+
     fill(#8E3FA8);
 
     float r = size / 2;
@@ -122,7 +122,7 @@ class Pet {
     }
 
     endShape(CLOSE);
-    
+
     popMatrix();
   }
 

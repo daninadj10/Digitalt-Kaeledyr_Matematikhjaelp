@@ -3,13 +3,14 @@ int screen;
 PImage bg;
 ArrayList<Activity> activities = new ArrayList<Activity>();
 ArrayList<Button> buttons = new ArrayList<Button>();
+ArrayList<Particle> particles = new ArrayList<Particle>();
 
 
 void setup() {
   size(800, 600, P2D);
   surface.setLocation(displayWidth / 2 - width / 2, displayHeight / 2 - height / 2);
   pixelDensity(2);
-  
+
   bg = loadImage("Background.png");
   image(bg, 0, 0);
   screen = 0;
@@ -24,12 +25,17 @@ void setup() {
 void draw() {
   if (screen == 0) drawHomescreen();
   if (screen == 1) drawMathgame();
-
 }
 
 void mousePressed() {
   if (pet.isClicked(mouseX, mouseY)) {
     buttons.get(0).click(pet);
+    for (int i = 0; i < 4; i++) {
+      particles.add(new HeartParticle(
+        mouseX + random(-8, 8),
+        mouseY + random(-8, 8)
+        ));
+    }
   }
   if (screen == 0) screenShift(mouseX, mouseY);
 }
