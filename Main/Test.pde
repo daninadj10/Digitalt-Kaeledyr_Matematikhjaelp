@@ -12,5 +12,5 @@ void runTests() {
   pet.changeHappiness(70);    // energi er nu 70
 
   pet.changeHappiness(20);
-  check("T1: Ændr energi +20 ved 70", 90, pet.getHappiness());
+  check("T2: Ændr glæde +20 ved 70", 90, pet.getHappiness());
 }
