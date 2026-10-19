@@ -10,15 +10,17 @@ Vores digitale kæledyr skal hjælpe indskolingselever med at øve matematik gen
 
 \## Sådan kører du programmet
 
-1. Installér Processing 4.
-2. Åbn mappen 'main' og kør 'main.pde'.
+Installér Processing 4.
+
+Åbn mappen 'main' og kør 'main.pde'.
 
 
 
 \## Controls
 
-* Klik på kæledyret for at kæle for det, det bliver gladere og der vises hjerter
-* Klik på en bog for at skifte side
+Klik på kæledyret for at kæle for det, det bliver gladere og der vises hjerter
+
+Klik på en bog for at skifte side
 
 
 
@@ -26,16 +28,21 @@ Vores digitale kæledyr skal hjælpe indskolingselever med at øve matematik gen
 
 Se 'klassediagram.png'.
 
-* 'Pet' holder styr på Mads' glæde og visning.
-* 'Activity' beskriver en aktivitet og dens virkning.
-* 'Button' viser en knap og registrer klik.
+'Pet' holder styr på Mads' glæde og visning.
+
+'Activity' beskriver en aktivitet og dens virkning.
+
+'Button' viser en knap og registrer klik.
 
 
 
 \## OOP i projektet
 
-* Indkapsling:'happiness' er 'private' og ændres kun gennem 'changeHappiness()'.
-* Nedarvning og polymorfi: 'Heartparticle' arver fra 'Particle'.
+Indkapsling:
+
+\- 'happiness' er 'private' og ændres kun gennem 'changeHappiness()'.
+
+\- Nedarvning og polymorfi: 'Heartparticle' arver fra 'Particle'.
 
 
 
