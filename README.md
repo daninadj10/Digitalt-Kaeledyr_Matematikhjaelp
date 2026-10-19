@@ -38,9 +38,7 @@ Se 'klassediagram.png'.
 
 \## OOP i projektet
 
-Indkapsling:
-
-\- 'happiness' er 'private' og ændres kun gennem 'changeHappiness()'.
+\- Indkapsling: 'happiness' er 'private' og ændres kun gennem 'changeHappiness()'.
 
 \- Nedarvning og polymorfi: 'Heartparticle' arver fra 'Particle'.
 
